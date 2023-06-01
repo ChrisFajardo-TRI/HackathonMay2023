@@ -32,7 +32,7 @@ Run a server with FastChat LLM (fastchat-t5-3b-v1.0). The local running API is O
 - install `pip install fschat`
 - serve from 3 terminals
   - `python3 -m fastchat.serve.controller`
-  - `CUDA_VISIBLE_DEVICES=0 python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0`
+  - `python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0 --num-gpus 2 `
   - `python3 -m fastchat.serve.openai_api_server --host localhost --port 8000`
 
 ## [LangChain](https://python.langchain.com/en/latest/)

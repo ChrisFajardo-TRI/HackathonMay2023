@@ -4,7 +4,7 @@
   - [Goal](#goal)
   - [Setup Notes](#setup-notes)
   - [FastChat](#fastchat)
-  - [\[LangChain](#langchain)
+  - [LangChain](#langchain)
   - [(aside) Example with ChainLit](#aside-example-with-chainlit)
   - [Stable Diffusion server](#stable-diffusion-server)
   - [Run the notebook](#run-the-notebook)
@@ -35,7 +35,7 @@ Run a server with FastChat LLM (fastchat-t5-3b-v1.0). The local running API is O
   - `CUDA_VISIBLE_DEVICES=0 python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0`
   - `python3 -m fastchat.serve.openai_api_server --host localhost --port 8000`
 
-## [LangChain[](https://python.langchain.com/en/latest/)
+## [LangChain](https://python.langchain.com/en/latest/)
 
 Python library that helps build LLM apps. Integrates with various LLMs including OpenAI API.
 

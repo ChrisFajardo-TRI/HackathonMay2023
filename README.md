@@ -4,7 +4,7 @@
   - [Goal](#goal)
   - [Setup Notes](#setup-notes)
   - [FastChat](#fastchat)
-  - [LangChain](#langchain)
+  - [\[LangChain](#langchain)
   - [(aside) Example with ChainLit](#aside-example-with-chainlit)
   - [Stable Diffusion server](#stable-diffusion-server)
   - [Run the notebook](#run-the-notebook)
@@ -25,7 +25,7 @@
 - Use a python virtual env
 - For now hardcoded GPU 0 for LLM and GPU 1 for Stable Diffusion
 
-## FastChat
+## [FastChat](https://github.com/lm-sys/FastChat)
 
 Run a server with FastChat LLM (fastchat-t5-3b-v1.0). The local running API is OpenAI API compatible!
 
@@ -35,13 +35,14 @@ Run a server with FastChat LLM (fastchat-t5-3b-v1.0). The local running API is O
   - `CUDA_VISIBLE_DEVICES=0 python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0`
   - `python3 -m fastchat.serve.openai_api_server --host localhost --port 8000`
 
-## LangChain
+## [LangChain[](https://python.langchain.com/en/latest/)
 
 Python library that helps build LLM apps. Integrates with various LLMs including OpenAI API.
 
-FastChat notes on LangChain integration https://github.com/lm-sys/FastChat/blob/main/docs/langchain_integration.md
-    - `pip install langchain`
-    - `pip install openai`
+FastChat notes on [LangChain integration](https://github.com/lm-sys/FastChat/blob/main/docs/langchain_integration.md)
+
+- `pip install langchain`
+- `pip install openai`
 
 ## (aside) Example with [ChainLit](https://docs.chainlit.io/overview)
 

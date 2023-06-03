@@ -1,0 +1,6 @@
+jupyter
+fschat
+chainlit
+langchain
+xformers
+diffusers

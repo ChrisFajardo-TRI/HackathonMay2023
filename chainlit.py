@@ -1,7 +1,7 @@
 
 import chainlit as cl
 
-from local_llm import create_red_pajama_llmchain
+from llm_lib import create_red_pajama_llmchain
 
 @cl.langchain_factory
 def factory():

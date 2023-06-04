@@ -9,14 +9,14 @@ from xformers.ops import MemoryEfficientAttentionFlashAttentionOp
 
 
 pipe = StableDiffusionPipeline.from_pretrained("stabilityai/stable-diffusion-2-1", torch_dtype=torch.float16)
-pipe = pipe.to("cuda:1")
+pipe = pipe.to("cuda")
 pipe.enable_xformers_memory_efficient_attention(attention_op=MemoryEfficientAttentionFlashAttentionOp)
 # Workaround for not accepting attention shape using VAE for Flash Attention
 pipe.vae.enable_xformers_memory_efficient_attention(attention_op=None)
 pipe.set_use_memory_efficient_attention_xformers(True)
 
 pipe_im = StableDiffusionImg2ImgPipeline.from_pretrained("stabilityai/stable-diffusion-2-1", torch_dtype=torch.float16)
-pipe_im = pipe_im.to("cuda:1")
+pipe_im = pipe_im.to("cuda")
 pipe_im.enable_xformers_memory_efficient_attention(attention_op=MemoryEfficientAttentionFlashAttentionOp)
 # Workaround for not accepting attention shape using VAE for Flash Attention
 pipe_im.vae.enable_xformers_memory_efficient_attention(attention_op=None)

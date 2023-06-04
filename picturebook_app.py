@@ -8,13 +8,14 @@ import textwrap
 
 from llm_lib import create_red_pajama_llmchain
 
-LLM_SYSTEM_TEMPLATE = """You are an AI conversing with a human. The human input is a line of a story. 
-Respond with a short description of a cartoon illustration that could be used to illustrate the story so far.
+LLM_SYSTEM_TEMPLATE = """You are a chatbot having a conversation with a human. 
+The human is reading a children's theme story to you one section at a time.
+Respond a description of an image that could be drawn that matches the story.
 
 Begin!
 ----------------"""
 
-LLM_HUMAN_TEMPLATE = "{question}"
+LLM_HUMAN_TEMPLATE = "The next line of the story is: {question}"
 
 IMAGE_TEMPLATE = "children's cartoon: "
 
@@ -55,7 +56,7 @@ class StoryProcessor:
         image_desc = generate_image_desc(self.llm_chain, caption)
         image_prompt = f"{self.image_template}{image_desc}"
         print(f"{image_prompt=}")
-        image = generate_image(image_prompt, None)
+        image = generate_image(caption, None)
         cap_image = image.copy()
         add_text(cap_image, caption, margin=40, offset=40)
         add_text(cap_image, image_desc, margin=40, offset=100)

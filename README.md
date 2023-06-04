@@ -96,7 +96,7 @@ source venv/bin/activate
 make all -j
 ```
 
-- See jupyter notebook at <http://localhost:8888/notebooks/PictureBookMaking.ipynb8>
+- See jupyter notebook at <http://localhost:8888/notebooks/PictureBookMaking.ipynb>
 - See chainlit at <http://localhost:8002>
 
 ## TODO / Improvements
@@ -104,7 +104,7 @@ make all -j
 ### Better Performance
 
 - Prompt Engineering
-  - the top of [picturebook_app.py](picturebook_app.py) contains the templates
+  - Modify the templates in the [notebook](PictureBookMaking.ipynb))
 - LLM update [llm_lib.py](llm_lib.py)
   - use different models
   - try different kinds of conversation memory.

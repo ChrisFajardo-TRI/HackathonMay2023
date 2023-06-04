@@ -110,7 +110,7 @@ make all -j
   - try different kinds of conversation memory.
 - Stable Diffusion
   - update pipeline parameters in update [stable_diffusion_api.py](stable_diffusion_api.py) , such as steps, strength, guidance
-  - in [picturebook_app.py](picturebook_app.py), use the previous image as addition input to stable diffusion
+  - if using update() with use_previous_image=True, change how much effect it has
 
 ### Add live dictation
 

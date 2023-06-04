@@ -51,12 +51,12 @@ class StoryProcessor:
         self.cap_images = []
         self.image_template = image_template
         
-    def update(self, caption):
+    def update(self, caption, use_previous_image=True):
         print(f"{caption=}")
         image_desc = generate_image_desc(self.llm_chain, caption)
         image_prompt = f"{self.image_template}{image_desc}"
         print(f"{image_prompt=}")
-        image = generate_image(caption, None)
+        image = generate_image(caption, self.images[-1] if (self.images and use_previous_image) else None)
         cap_image = image.copy()
         add_text(cap_image, caption, margin=40, offset=40)
         add_text(cap_image, image_desc, margin=40, offset=100)

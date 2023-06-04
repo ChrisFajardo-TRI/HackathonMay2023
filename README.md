@@ -10,8 +10,8 @@
     - [PictureBook App](#picturebook-app)
   - [Run](#run)
     - [Setup Notes](#setup-notes)
-      - [Docker](#docker)
-      - [Local Run](#local-run)
+    - [Docker](#docker)
+    - [Local Run](#local-run)
   - [TODO / Improvements](#todo--improvements)
     - [Better Performance](#better-performance)
     - [Add live dictation](#add-live-dictation)
@@ -72,14 +72,14 @@ My demo [notebook](PictureBookMaking.ipynb) allows human to input a story line b
     - Set to 2nd GPU because LLM is mostly on 1st.
 - First time runs will take a few minutes to download models from HuggingFace.
 
-#### Docker
+### Docker
 
 `docker compose up`
 
 - See jupyter notebook at <http://localhost:8888/notebooks/PictureBookMaking.ipynb>
 - See chainlit at <http://localhost:8002>
 
-#### Local Run
+### Local Run
 
 Uses python 3.10
 

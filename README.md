@@ -59,6 +59,8 @@ Generate images.
 
 My demo [notebook](PictureBookMaking.ipynb) allows human to input a story line by line, and for each line have LLM generate a related image generation prompt which stable diffusion then uses to generate an image.
 
+Story history is maintained by the LLM conversation history and style history is maintained by previous image.
+
 ## Run
 
 ### Setup Notes

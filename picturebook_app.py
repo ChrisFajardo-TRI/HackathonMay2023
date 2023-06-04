@@ -1,5 +1,6 @@
 import base64
 import io
+import pathlib
 
 import httpx
 import ipywidgets as widgets
@@ -87,5 +88,9 @@ class DemoApp:
         
     def save(self):
         self.sp.cap_images[0].save(
-            "/tmp/book.pdf", "PDF" ,resolution=100.0, save_all=True, append_images=self.sp.cap_images[1:]
+            pathlib.Path(__file__).parent / "book.pdf", 
+            "PDF" ,
+            resolution=100.0, 
+            save_all=True, 
+            append_images=self.sp.cap_images[1:]
         )

@@ -1,4 +1,4 @@
-*.log
+*.log*
 .ipynb_checkpoints
 .chainlit
 venv

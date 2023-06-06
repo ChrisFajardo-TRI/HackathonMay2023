@@ -59,20 +59,21 @@ Generate images.
 
 My demo [notebook](PictureBookMaking.ipynb) allows human to input a story line by line, and for each line have LLM generate a related image generation prompt which stable diffusion then uses to generate an image.
 
-Story history is maintained by the LLM conversation history and style history is maintained by previous image.
+The intent was to have story history maintained by the LLM conversation history and style history maintained by previous image, but this can definitely be improved.
 
 ## Run
 
 ### Setup Notes
 
 - This was developed using a Puget with **two** 12GB Nvidia GPUs
-  - 7b LLMs need more than 12GB so FastChat API supports multiple
-    - See Makefile fastchat_worker command usage
-    - When using multiple, 1st one's memory gets filled up more than 2nd.
-  - Stable Diffusion can run in one GPU
-    - See Makefile stable_diffusion command usage
-    - Set to 2nd GPU because LLM is mostly on 1st.
-- First time runs will take a few minutes to download models from HuggingFace.
+- LLM GPU memory requirement
+  - You can see the size of the pytorch_model*.bin files in the model's HuggingFace page's "Files and Versions" section.
+  - FastChat API supports multiple usage of multiple GPU. See Makefile fastchat_worker command usage.
+  - Currently I'm using togethercomputer/RedPajama-INCITE-Chat-7B-v0.1 which needs 14 GB, using 2 GPU
+- Stable Diffusion GPU memory requirement
+  - Currently I'm using stabilityai/stable-diffusion-2-1, which needs 5GB.
+  - Currently hardcoded to use 2nd GPU (index 1) because LLM is mostly on 1st (index 0). See Makefile stable_diffusion command usage.
+- First time runs will take a few minutes to download models the above models from HuggingFace.
 
 ### Docker
 
